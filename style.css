@@ -1,0 +1,70 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+body{
+    background: linear-gradient(320deg, navy,ivory);
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+}
+.calculator{
+    border: solid 2px black;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+    background-color: #ffffff5e;
+    height: 450px;
+}
+button{
+    margin-top: 5px;
+    position: inherit;
+    height: 55px;
+    width: 55px;
+    border: 1px solid black;
+    border-radius: 30px;
+    font-size: large;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.85s ease, transform 0.85s ease;
+}
+button:hover{
+    border: 3px solid azure;
+    cursor: pointer;
+}
+#textBox{
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 50px;
+    width: 250px;
+    text-align: right;
+    font-size: 32px;
+}
+.name{
+    background-color: azure;
+    width: 250px;
+    margin-left: 8%;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+.calcBtn{
+    background-color: rgba(103, 228, 245, 0.631);
+}
+.digitsBtn{
+    background-color: azure;
+}
+.calcBtn:hover{
+    background-color: rgba(103, 228, 245);
+    color: azure;
+}
+.digitsBtn:hover{
+    background-color: rgba(103, 228, 245, 0.258);
+    color: azure;
+}
+.animate-button {
+    opacity: 1;
+    transform: translateY(0);
+}
