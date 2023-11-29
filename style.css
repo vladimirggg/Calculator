@@ -3,7 +3,7 @@ html{
     height: 100%;
 }
 body{
-    background: linear-gradient(320deg, navy,ivory);
+    background: linear-gradient(330deg, rgb(81, 81, 200),ivory);
     height: 100vh;
     display: flex;
     margin: 0;

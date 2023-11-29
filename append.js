@@ -5,7 +5,10 @@ export function appendSymbol(input,value){
     
     else if (value === '←'){ // delete the last dig
         let buff = input.value
-        buff = buff.substring(0, buff.length - 1)
+        // if it is operaiton, we need to remove 3 characters
+        if(buff[buff.length - 1] == ' ') buff = buff.substring(0, buff.length - 3)
+        // otherwise remove just the digit
+        else buff = buff.substring(0, buff.length - 1)
         input.value = buff;
     }
     else if (value === '=')  // solve the task
@@ -17,9 +20,13 @@ export function appendSymbol(input,value){
         input.value += buff
     } 
 
-    else if (input.value.match(/\d+ (\+|-|÷|x) \d+/g)) solve(input) // if we have more than one operation, complete the first one
+    else if (input.value.match(/\d+ (\+|-|÷|x) \d+/g)) {
+        solve(input) // if we have more than one operation, complete the first one
+        input.value += ` ${value} ` // and append the new one
+    }
 
-    else if (['+', '-', 'x', '÷'].includes(input.value[input.value.length - 2])) { // if there are two operators one after another swap them
+    else if (['+', '-', 'x', '÷'].includes(input.value[input.value.length - 2])) { 
+        // if there are two operators one after another swap them
         let buff = input.value
         buff = buff.substring(0, buff.length - 3)
         input.value = buff;
